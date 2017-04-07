@@ -29,9 +29,5 @@ class Controller
         foreach ($objPHPExcel->getWorksheetIterator() as $worksheet) {
             $this->arr_value[$worksheet->getTitle()] = $worksheet->toArray();
         }
-        return ($this->arr_value);
     }
-
 }
-
-$tmp = new Controller("data.xlsx");

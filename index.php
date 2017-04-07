@@ -6,16 +6,17 @@
  * Time: 09:48
  */
 ?>
-    <!DOCTYPE html>
-    <?php require "controller.php"; ?>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-<?php
-var_dump(new Controller("data.xlsx"))
+<!DOCTYPE html>
+<?php require "controller.php";
+$controle = new Controller('data.xlsx')
 ?>
-</body >
-</html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeepOr - Stats</title>
+</head>
+<body>
+<?php
+?>
+</body>
+</html>
