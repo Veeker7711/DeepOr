@@ -1,0 +1,50 @@
+.container-fluid
+{
+    background-color: #56a556;
+}
+
+.navbar-default .navbar-brand
+{
+    color: #1b1b1b;
+}
+
+.res
+{
+    width: 115px;
+    height: 50px;
+}
+
+.select_file
+{
+    width: 30%;
+    text-align: center;
+    display: block;
+    border: black;
+    border-style: double;
+    padding-bottom: 5px;
+    margin-left: 5%;
+}
+
+.file
+{
+    margin-top: 5px;
+}
+
+.get_data
+{
+    display: flex;
+}
+
+.selected_file
+{
+    width: 30%;
+    border: black;
+    border-style: double;
+    margin-left: 30%;
+    text-align: center;
+}
+
+.selected_button
+{
+    margin-top: 45px;
+}

@@ -30,4 +30,15 @@ class Controller
             $this->arr_value[$worksheet->getTitle()] = $worksheet->toArray();
         }
     }
+
+    public function list_file()
+    {
+      $dir = scandir('.');
+      $list = [];
+      foreach ($dir as $file) {
+	  if ($tmp = preg_match('/\w+\.xlsx/', $file))
+	    $list[] = "<div class=\"file\" ><button type=\"button\" onclick=\"div_swap()\"class=\"btn btn-primary\">" . $file . "</button></div>";	    
+	}
+      return ($list);
+    }
 }
