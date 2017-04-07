@@ -14,6 +14,9 @@ $controle = new Controller('data.xlsx')
 <head>
     <meta charset="UTF-8">
     <title>DeepOr - Stats</title>
+   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="starter-template.css" rel="stylesheet">
+   
 </head>
 <body>
 <?php
