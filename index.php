@@ -8,7 +8,7 @@
 ?>
 <!DOCTYPE html>
 <?php require "controller.php";
-$controle = new Controller('data.xlsx')
+$controle = new Controller('data.xlsx');
 ?>
 <html lang="en">
 <head>
