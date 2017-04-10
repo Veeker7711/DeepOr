@@ -37,7 +37,7 @@ class Controller
       $list = [];
       foreach ($dir as $file) {
 	  if ($tmp = preg_match('/\w+\.xlsx/', $file))
-	    $list[] = "<div class=\"file\" ><button type=\"button\" onclick=\"div_swap()\"class=\"btn btn-primary\">" . $file . "</button></div>";	    
+	    $list[] = "<div class=\"file\" id=\"not_selected\"><button type=\"button\" id=\"test_".$file."\" onclick=\"swap(this)\"class=\"btn btn-primary\">" . $file . "</button></div>";	    
 	}
       return ($list);
     }

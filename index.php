@@ -10,7 +10,8 @@ $controle = new Controller('data.xlsx');
   <title>DeepOr - Stats</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="overwrite.css" rel="stylesheet">
-  </head>
+ <script src="function.js"></script>
+ </head>
   <body>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -21,16 +22,23 @@ $controle = new Controller('data.xlsx');
   </ul>
   </div>
   </nav>
-  <div class="get_data">
+    <div class="to_center">
+    <h4>Select the file you want to analyze: </h4>
+    </div>
   <div class="select_file">
   <?php
   foreach ($controle->list_file() as $row)
   echo $row;
   ?>
   </div>
+<br>
+<br>
+<div class="to_center">
+<h4>Selected file: </h4>
+    </div>
   <div class="selected_file" id="selected_file">
-  <button type="button" class="btn btn-primary selected_button">TEST</button>
-  </div>
-  </div>
+   </div>
+    <br>
+    <br>
   </body>
 </html>

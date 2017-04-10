@@ -1,0 +1,27 @@
+function swap(id)
+{
+    var registered = document.querySelector(".selected_file");
+    var not_registered = document.querySelector(".select_file");
+    var target = document.getElementById(id.id);
+    if (target.parentNode.id == "not_selected")
+    {
+	if (!document.getElementById("go"))
+	{
+	    var div = document.createElement('div');
+	    div.ClassName = "go_button";
+	    var button = document.createElement('button');
+	    button.className = "btn btn-primary";
+	    button.innerHTML = "GO !";
+	    document.body.appendChild(div);
+	    div.appendChild(button);
+	}
+	var select = document.getElementById("selected");
+	if (select != null)
+	{
+	    select.id = "not_selected";
+	    not_registered.appendChild(select);
+	}
+	target.parentNode.id = "selected";
+	registered.appendChild(target.parentNode);
+    }
+}
