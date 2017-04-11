@@ -1,5 +1,4 @@
 <?php
-//require_once "PHPExcel-1.8/Classes/PHPExcel.php";
 
 function scan_data($array)
 {
@@ -53,18 +52,3 @@ function make_ladder_vertical($array)
     return $i;
 }
 
-/*$arr_value = [];
-$file = "data.xlsx";
-
-$pathInfo = pathinfo($file);
-$type = $pathInfo['extension'] == 'xlsx' ? 'Excel2007' : 'Excel5';
-
-$objReader = PHPExcel_IOFactory::createReader($type);
-$objPHPExcel = $objReader->load($file);
-
-foreach ($objPHPExcel->getWorksheetIterator() as $worksheet) {
-    $arr_value[$worksheet->getTitle()] = $worksheet->toArray();
-}
-
-$tmp = scan_data($arr_value);
-var_dump(make_ladder_vertical($tmp));

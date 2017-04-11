@@ -20,7 +20,7 @@ $array = $_SESSION['array'];
 $black = imagecolorallocate($image, 0, 0, 0);
 $white = imagecolorallocate($image, 255, 255, 255);
 
-/* tracer du graph */
+/* image drawn here  */
 
 imagefill($image, 0, 0, $background_color);
 $stats = scan_data($array);
@@ -36,12 +36,20 @@ for ($i = 1; $i <= $max_y; $i++) /* Vertical graduation */
         imagelinethick($image, $ladder_x-5, $ladder, $ladder_x+5, $ladder, $axes_color, 2);
         imagestring($image, $font, $ladder_x - 10, $ladder , $i, $black);
     }
-$i = 1;
+$i = 0;
 foreach ($stats as $key => $value)
     {
+        
         $ladder = ($ladder_x * $i) + $ladder_x;
         imagelinethick($image, $ladder, $height-$ladder_y*2-5, $ladder, $height-$ladder_y*2+5, $axes_color, 2);
         imagestringup($image, $font, $ladder, $height-$ladder_y+25 , $key, $black);
+        if ($i != 0)
+            {
+                $prev_point_y = $height - ($ladder_y * $stats[$tmp]+(2 * $ladder_y));
+                $current_point_y = $height - ($ladder_y * $value +(2 * $ladder_y));
+                imagelinethick($image, $ladder-$ladder_x, $prev_point_y, $ladder, $current_point_y, $axes_color, 2);
+            }
+        $tmp = $key;
         $i++;
     }
 

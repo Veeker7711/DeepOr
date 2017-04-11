@@ -1,6 +1,6 @@
 <?php
 require "controller.php";
-
+require "graph_func.php";
 $controle = new Controller();
 ?>
 
@@ -41,9 +41,28 @@ if (isset($_GET['file']))
             session_start();
             $_SESSION['array'] = $controle->get_array();
             echo "<div class=\"to_center\"><img src=\"make_graph.php\"></div>";
+            ?>
+
+            <div class="to_center">
+            <div class="moyen-op">
+            <h4> Average operation during an ACTIVE day: </h4>
+            <div class="to_center">
+            <?php
+            $stats = scan_data($controle->get_array());
+            $i = 0;
+            foreach ($stats as $row)
+                $i += $row;
+            $i = $i / count($stats);
+            echo "<h3>".round($i, 2)."</h3>";
+            ?>
+            </div>
+            </div>
+            </div>
+            
+            <?php
         }
         else
-            echo "<div class=\"error\">Can't get information from " . $_GET['file']  . " !</div>";
+            echo "<div class=\"to_center\">Can't get information from " . $_GET['file']  . " !</div>";
     }
 ?>
   </body>
