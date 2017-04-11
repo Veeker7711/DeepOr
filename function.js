@@ -1,11 +1,11 @@
 function swap(id)
 {
-    var registered = document.querySelector(".selected_file");
+   /* var registered = document.querySelector(".selected_file");
     var not_registered = document.querySelector(".select_file");
-    var target = document.getElementById(id.id);
+    
     if (target.parentNode.id == "not_selected")
     {
-	if (!document.getElementById("go"))
+	/*if (!document.getElementById("go"))
 	{
 	    var div = document.createElement('div');
 	    div.className = "go_button";
@@ -13,8 +13,8 @@ function swap(id)
 	    var button = document.createElement('button');
 	    button.className = "btn btn-primary";
 	    button.innerHTML = "GO !";
-	    button.onclick = make_graph;
-	    document.body.appendChild(div);
+	    button.onclick = refresh_page;
+	    document.getElementById("for_go").appendChild(div);
 	    div.appendChild(button);
 	}
 	var select = document.getElementById("selected");
@@ -25,12 +25,8 @@ function swap(id)
 	}
 	target.parentNode.id = "selected";
 	registered.appendChild(target.parentNode);
-    }
-}
 
-function make_graph()
-{
-    var file = document.getElementById("selected");
-    file = file.childNodes[0].innerText;
-    console.log(file);
+	}*/
+    var target = document.getElementById(id.id);
+    document.location.href = "?file=" + target.id;
 }
